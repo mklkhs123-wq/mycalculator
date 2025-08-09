@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Finance App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Smart Finance</h2>
+        <ul>
+            <li onclick="showSection('emi')">EMI Calculator</li>
+            <li onclick="showSection('fd')">FD Calculator</li>
+            <li onclick="showSection('sip')">SIP Calculator</li>
+            <li onclick="showSection('rd')">RD Calculator</li>
+            <li onclick="showSection('ppf')">PPF Calculator</li>
+            <li onclick="showSection('currency')">Currency Converter</li>
+            <li onclick="showSection('news')">Finance News</li>
+            <li onclick="showSection('loan')">Loan Check</li>
+            <li onclick="showSection('payment')">Payment / UPI</li>
+            <li onclick="showSection('companies')">Indian Finance Companies</li>
+            <li onclick="showSection('privacy')">Privacy Policy</li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <!-- EMI Calculator -->
+        <div id="emi" class="section">
+            <h2>EMI Calculator</h2>
+            <input type="number" id="emiLoan" placeholder="Loan Amount">
+            <input type="number" id="emiRate" placeholder="Interest Rate (%)">
+            <input type="number" id="emiTime" placeholder="Tenure (months)">
+            <button onclick="calculateEMI()">Calculate EMI</button>
+            <p id="emiResult"></p>
+        </div>
+
+        <!-- FD Calculator -->
+        <div id="fd" class="section">
+            <h2>FD Calculator</h2>
+            <input type="number" id="fdAmount" placeholder="Principal Amount">
+            <input type="number" id="fdRate" placeholder="Interest Rate (%)">
+            <input type="number" id="fdTime" placeholder="Time (years)">
+            <button onclick="calculateFD()">Calculate FD</button>
+            <p id="fdResult"></p>
+        </div>
+
+        <!-- SIP Calculator -->
+        <div id="sip" class="section">
+            <h2>SIP Calculator</h2>
+            <input type="number" id="sipAmount" placeholder="Monthly Investment">
+            <input type="number" id="sipRate" placeholder="Expected Return (%)">
+            <input type="number" id="sipTime" placeholder="Time (years)">
+            <button onclick="calculateSIP()">Calculate SIP</button>
+            <p id="sipResult"></p>
+        </div>
+
+        <!-- RD Calculator -->
+        <div id="rd" class="section">
+            <h2>RD Calculator</h2>
+            <input type="number" id="rdAmount" placeholder="Monthly Deposit">
+            <input type="number" id="rdRate" placeholder="Interest Rate (%)">
+            <input type="number" id="rdTime" placeholder="Time (months)">
+            <button onclick="calculateRD()">Calculate RD</button>
+            <p id="rdResult"></p>
+        </div>
+
+        <!-- PPF Calculator -->
+        <div id="ppf" class="section">
+            <h2>PPF Calculator</h2>
+            <input type="number" id="ppfAmount" placeholder="Annual Deposit">
+            <input type="number" id="ppfRate" placeholder="Interest Rate (%)">
+            <input type="number" id="ppfTime" placeholder="Time (years)">
+            <button onclick="calculatePPF()">Calculate PPF</button>
+            <p id="ppfResult"></p>
+        </div>
+
+        <!-- Currency Converter -->
+        <div id="currency" class="section">
+            <h2>Currency Converter</h2>
+            <input type="number" id="currencyAmount" placeholder="Amount in INR">
+            <select id="currencyTo">
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+                <option value="GBP">GBP</option>
+            </select>
+            <button onclick="convertCurrency()">Convert</button>
+            <p id="currencyResult"></p>
+        </div>
+
+        <!-- Finance News -->
+        <div id="news" class="section">
+            <h2>Finance News</h2>
+            <iframe src="https://www.moneycontrol.com/news/" width="100%" height="400"></iframe>
+        </div>
+
+        <!-- Loan Check -->
+        <div id="loan" class="section">
+            <h2>Loan Check</h2>
+            <button onclick="window.open('https://www.paisabazaar.com/personal-loan/', '_blank')">Check Loan Options</button>
+        </div>
+
+        <!-- Payment -->
+        <div id="payment" class="section">
+            <h2>Payment / UPI</h2>
+            <button onclick="window.open('upi://pay?pa=yourupiid@upi&pn=YourName&mc=0000&tid=1234567890', '_blank')">Pay Now via UPI</button>
+        </div>
+
+        <!-- Indian Finance Companies -->
+        <div id="companies" class="section">
+            <h2>Indian Finance Companies</h2>
+            <ul id="companyList"></ul>
+        </div>
+
+        <!-- Privacy Policy -->
+        <div id="privacy" class="section">
+            <h2>Privacy Policy</h2>
+            <p>Your privacy is important to us. We do not collect personal data...</p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
